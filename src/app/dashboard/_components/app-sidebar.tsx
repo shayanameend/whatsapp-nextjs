@@ -1,5 +1,3 @@
-import { default as Link } from "next/link";
-
 import { Calendar, Home, Inbox, Search, Settings } from "lucide-react";
 
 import {
@@ -12,7 +10,6 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "~/components/ui/sidebar";
-import { cn } from "~/lib/utils";
 
 const items = [
   {
