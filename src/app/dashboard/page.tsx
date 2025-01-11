@@ -1,7 +1,6 @@
-import { Button } from "~/components/ui/button";
 import { cn } from "~/lib/utils";
 
-export default function HomePage() {
+export default function DashboardPage() {
   return (
     <>
       <section
@@ -9,7 +8,7 @@ export default function HomePage() {
           "h-screen w-screen flex flex-col justify-center items-center",
         )}
       >
-        <Button variant={"destructive"}>Click Me!</Button>
+        <h2>Dashboard</h2>
       </section>
     </>
   );
