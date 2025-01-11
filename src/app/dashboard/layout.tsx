@@ -8,7 +8,10 @@ export default async function DashboardLayout({
   children,
 }: Readonly<PropsWithChildren>) {
   const cookieStore = await cookies();
-  const defaultOpen = cookieStore.get("sidebar:state")?.value === "true";
+
+  const sidebarState = cookieStore.get("sidebar:state")?.value && "true";
+
+  const defaultOpen = sidebarState === "true";
 
   return (
     <SidebarProvider defaultOpen={defaultOpen}>
