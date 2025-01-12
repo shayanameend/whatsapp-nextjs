@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import type { PropsWithChildren } from "react";
 
-import { geistMono, geistSans } from "~/lib/fonts";
-
 import "~/app/globals.css";
+import { cn } from "~/lib/utils";
 
 export const metadata: Metadata = {
   title: "Next App",
@@ -13,9 +12,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<PropsWithChildren>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={cn("bg-gray-100 text-gray-500 font-medium")}>
         {children}
       </body>
     </html>
