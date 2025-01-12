@@ -8,7 +8,7 @@ export default function ChatPage() {
     <>
       <section
         className={cn(
-          "p-12 h-screen flex flex-col justify-center items-center",
+          "p-12 h-screen flex flex-col justify-center items-center text-gray-500",
         )}
       >
         <article

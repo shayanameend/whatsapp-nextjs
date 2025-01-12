@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<PropsWithChildren>) {
   return (
     <html lang="en">
-      <body className={cn("bg-gray-100 text-gray-500 font-medium")}>
+      <body className={cn("bg-gray-100 text-gray-900 font-medium")}>
         {children}
       </body>
     </html>
