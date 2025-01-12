@@ -10,7 +10,7 @@
     "biome:check": "biome check",
     "biome:safe": "biome check --write",
     "biome:unsafe": "biome check --write --unsafe",
-    "shadcn": "shadcn"
+    "ui": "shadcn"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.4",
