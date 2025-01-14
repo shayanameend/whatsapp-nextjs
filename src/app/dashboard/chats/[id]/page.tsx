@@ -1,6 +1,15 @@
-import { Avatar, AvatarFallback } from "@radix-ui/react-avatar";
-import { PhoneCallIcon, SearchIcon, User2Icon, VideoIcon } from "lucide-react";
+import {
+  MicIcon,
+  PhoneIcon,
+  PlusIcon,
+  SearchIcon,
+  User2Icon,
+  VideoIcon,
+} from "lucide-react";
+
+import { Avatar, AvatarFallback } from "~/components/ui/avatar";
 import { Button } from "~/components/ui/button";
+import { Textarea } from "~/components/ui/textarea";
 import { cn } from "~/lib/utils";
 
 interface ChatPageParams {
@@ -11,17 +20,13 @@ export default async function ChatPage({ params }: Readonly<ChatPageParams>) {
   const { id } = await params;
 
   return (
-    <>
+    <main className={cn("h-screen flex flex-col")}>
       <header
         className={cn("py-3 px-6 flex justify-between items-center gap-4")}
       >
-        <div className="flex items-center gap-4">
-          <Avatar
-            className={cn(
-              "rounded-full w-10 h-10 flex justify-center items-center bg-gray-200",
-            )}
-          >
-            <AvatarFallback className={"m-2 block"}>
+        <div className={cn("flex items-center gap-4")}>
+          <Avatar>
+            <AvatarFallback>
               <User2Icon />
             </AvatarFallback>
           </Avatar>
@@ -31,20 +36,51 @@ export default async function ChatPage({ params }: Readonly<ChatPageParams>) {
           </div>
         </div>
         <div className={cn("flex items-center gap-2")}>
-          <Button variant={"ghost"} size={"icon"}>
-            <VideoIcon />
+          <Button
+            variant={"ghost"}
+            size={"icon"}
+            className={cn("text-gray-700")}
+          >
+            <VideoIcon size={20} />
           </Button>
-          <Button variant={"ghost"} size={"icon"}>
-            <PhoneCallIcon />
+          <Button
+            variant={"ghost"}
+            size={"icon"}
+            className={cn("text-gray-700")}
+          >
+            <PhoneIcon size={18} />
           </Button>
-          <Button variant={"ghost"} size={"icon"}>
-            <SearchIcon />
+          <Button
+            variant={"ghost"}
+            size={"icon"}
+            className={cn("text-gray-700")}
+          >
+            <SearchIcon size={20} />
           </Button>
         </div>
       </header>
-      <section>
+      <section className={cn("flex-1")}>
         <h2>Chat {id} Page</h2>
       </section>
-    </>
+      <footer
+        className={cn("py-3 px-6 flex justify-between items-center gap-4")}
+      >
+        <Button
+          variant={"ghost"}
+          size={"icon"}
+          className={cn("rounded-full text-gray-700")}
+        >
+          <PlusIcon size={24} />
+        </Button>
+        <Textarea />
+        <Button
+          variant={"ghost"}
+          size={"icon"}
+          className={cn("rounded-full text-gray-700")}
+        >
+          <MicIcon size={24} />
+        </Button>
+      </footer>
+    </main>
   );
 }
